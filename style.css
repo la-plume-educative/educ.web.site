@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0; /* Couleur de fond de la navigation */
+    text-align: center; /* Centre les éléments de la navigation */
+}
+
+nav li {
+    display: inline; /* Affiche les éléments de la navigation horizontalement */
+    margin: 0 10px; /* Ajoute un espace entre les éléments */
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed; /* Pour que le footer reste en bas même si le contenu est court */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style pour les liens de navigation */
+nav a {
+    display: inline-block; /* Permet de définir une hauteur et une largeur */
+    padding: 10px 15px; /* Ajoute un espacement autour du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    color: #333; /* Couleur du texte */
+}
+
+nav a:hover {
+    background-color: #ddd; /* Change la couleur de fond au survol */
+}

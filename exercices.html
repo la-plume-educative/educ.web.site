@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices - Apprendre le Français</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004080;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #0059b3;
+            color: white;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .exercise h3 {
+            color: #0066cc;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #score {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercices Interactifs</h1>
+        <p>Pratiquez et améliorez vos compétences en français avec ces exercices interactifs.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#">Accueil</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#cours">Cours</a>
+        <a href="#">Exercices</a>
+        <a href="ressources.html">Ressources</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="exercices">
+        <h2>QUIZ PAGE 53</h2>
+        
+        <!-- Exercice 1 -->
+        <div class="exercise">
+            <a href="quiz_p53.html"><h2>QUIZ PAGE 53</h2></a>
+            <h3>Exercice 1 : Trouvez la bonne réponse</h3>
+            <form id="exercise-form-1">
+                <p>1. Quel est l'article défini pour "chat" ?</p>
+                <label><input type="radio" name="q1" value="la"> La</label>
+                <label><input type="radio" name="q1" value="le"> Le</label>
+                <label><input type="radio" name="q1" value="les"> Les</label>
+                <br>
+                <button type="button" class="btn-submit" onclick="validateExercise1()">Soumettre</button>
+            </form>
+            <div id="feedback-1" class="feedback"></div>
+        </div>
+
+        <!-- Exercice 2 -->
+        <div class="exercise">
+            <h3>Exercice 2 : Complétez les phrases</h3>
+            <form id="exercise-form-2">
+                <p>2. Il ... (manger) une pomme.</p>
+                <input type="text" id="q2" placeholder="Conjuguez le verbe au présent">
+                <br><br>
+                <button type="button" class="btn-submit" onclick="validateExercise2()">Soumettre</button>
+            </form>
+            <div id="feedback-2" class="feedback"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 la plume éducative. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Validation pour l'Exercice 1
+        function validateExercise1() {
+            const correctAnswer = "le";
+            const selectedAnswer = document.querySelector('input[name="q1"]:checked');
+            const feedback = document.getElementById("feedback-1");
+            if (selectedAnswer) {
+                if (selectedAnswer.value === correctAnswer) {
+                    feedback.textContent = "Bonne réponse !";
+                    feedback.style.color = "green";
+                } else {
+                    feedback.textContent = "Mauvaise réponse. La bonne réponse est : 'Le'.";
+                    feedback.style.color = "red";
+                }
+            } else {
+                feedback.textContent = "Veuillez sélectionner une réponse.";
+                feedback.style.color = "orange";
+            }
+        }
+
+        // Validation pour l'Exercice 2
+        function validateExercise2() {
+            const correctAnswer = "mange";
+            const userAnswer = document.getElementById("q2").value.trim().toLowerCase();
+            const feedback = document.getElementById("feedback-2");
+            if (userAnswer === correctAnswer) {
+                feedback.textContent = "Bonne réponse !";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = `Mauvaise réponse. La bonne réponse est : '${correctAnswer}'.`;
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

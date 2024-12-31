@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprendre le Français</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004080;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #0059b3;
+            color: white;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .highlight {
+            background: #e0f7fa;
+            padding: 10px;
+            border-left: 5px solid #0066cc;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .section-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-card h3 {
+            color: #0066cc;
+        }
+
+        .section-card a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .section-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\DELL\Desktop\Nouveau dossier\PYTHON\education web site\plume.png" alt="Logo Apprendre le Français" style="width: 100px; height: auto; display: block; margin: 0 auto;">
+        <h1>Bienvenue sur le site</h1>
+        <h1>LA PLUME EDUCATIVE</h1>
+        <p>Votre plateforme pour apprendre et améliorer votre maîtrise de la langue française.</p>
+    </header>
+
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#cours">Cours</a>
+        <a href="exercices.html">Exercices</a>
+        <a href="ressources.html">Ressources</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="actualites">
+        <h2>Dernières Actualités</h2>
+        <div class="highlight">
+            <p><strong>Nouvelle leçon ajoutée :</strong> Découvrez notre guide sur les conjugaisons des verbes irréguliers !</p>
+            <p><strong>Concours :</strong> Participez à notre concours d'écriture en français et gagnez des prix !</p>
+        </div>
+    </section>
+
+    <section id="sections">
+        <h2>Explorez Nos Sections</h2>
+        <div class="sections">
+            <div class="section-card">
+                <h3>Cours de Français</h3>
+                <p>Apprenez les bases et perfectionnez votre grammaire, vocabulaire et conjugaison.</p>
+                <a href="#cours">Voir les cours</a>
+            </div>
+            <div class="section-card">
+                <h3>Exercices Interactifs</h3>
+                <p>Pratiquez avec des exercices en ligne pour renforcer vos compétences.</p>
+                <a href="file:///C:/Users/DELL/Desktop/Nouveau%20dossier/PYTHON/education%20web%20site/exercices.html">Commencez maintenant</a>
+            </div>
+            <div class="section-card">
+                <h3>Ressources Audio et Vidéo</h3>
+                <p>Écoutez des dialogues et regardez des vidéos éducatives en français.</p>
+                <a href="file:///C:/Users/DELL/Desktop/Nouveau%20dossier/PYTHON/education%20web%20site/ressources.html">Accéder aux ressources</a>
+            </div>
+            <div class="section-card">
+                <h3>Contact et Support</h3>
+                <p>Besoin d'aide ? Contactez-nous pour toute question ou assistance.</p>
+                <a href="#contact">Contactez-nous</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 la plume éducative. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
