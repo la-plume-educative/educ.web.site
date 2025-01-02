@@ -72,14 +72,14 @@
         <h1>Quiz d'écoute - Séquence 3</h1>
         
         <!-- Affichage de l'image -->
-        <img src="p53.jpg" alt="Page 53 Séquence 3">
+        <img src="C:\Users\DELL\Desktop\Nouveau dossier\PYTHON\quiz livre scolaire\page 53\p53.jpg" alt="Page 53 Séquence 3">
 
         <!-- Section pour la première écoute -->
         <div id="section-1" class="quiz-section">
             <div class="audio">
-                <h2>1re Écoute : Écoute le document sonore mp4</h2>
-                <audio controls>
-                    <source src="sequence audio P53.mp4" type="audio/mpeg">
+                <h2>1re Écoute : Écoute le document sonore</h2>
+                <audio id="audio-1" controls>
+                    <source src="C:\Users\DELL\Desktop\Nouveau dossier\PYTHON\quiz livre scolaire\page 53\sequence audio P53.m4a" type="audio/mpeg">
                     Votre navigateur ne supporte pas la lecture audio.
                 </audio>
             </div>
@@ -98,15 +98,15 @@
                     <label><input type="radio" name="q2" value="tempete"> Une tempête de sable</label>
                 </div>
             </div>
-            <button class="btn-next" onclick="showNextSection(2)">Passer à la 2e Écoute</button>
+            <button class="btn-next" onclick="showNextSection(2, 'audio-1')">Passer à la 2e Écoute</button>
         </div>
 
         <!-- Section pour la deuxième écoute -->
         <div id="section-2" class="quiz-section hidden">
             <div class="audio">
                 <h2>2e Écoute : Réécoute le document sonore</h2>
-                <audio controls>
-                    <source src="sequence audio P53.m4a" type="audio/mpeg">
+                <audio id="audio-2" controls>
+                    <source src="C:\Users\DELL\Desktop\Nouveau dossier\PYTHON\quiz livre scolaire\page 53\sequence audio P53.m4a" type="audio/mpeg">
                     Votre navigateur ne supporte pas la lecture audio.
                 </audio>
             </div>
@@ -123,15 +123,15 @@
                     <label><input type="radio" name="q4" value="vent"> Des vents violents</label>
                 </div>
             </div>
-            <button class="btn-next" onclick="showNextSection(3)">Passer à la 3e Écoute</button>
+            <button class="btn-next" onclick="showNextSection(3, 'audio-2')">Passer à la 3e Écoute</button>
         </div>
 
         <!-- Section pour la troisième écoute -->
         <div id="section-3" class="quiz-section hidden">
             <div class="audio">
                 <h2>3e Écoute : Une dernière fois</h2>
-                <audio controls>
-                    <source src="sequence audio P53.m4a" type="audio/mpeg">
+                <audio id="audio-3" controls>
+                    <source src="C:\Users\DELL\Desktop\Nouveau dossier\PYTHON\quiz livre scolaire\page 53\sequence audio P53.m4a" type="audio/mpeg">
                     Votre navigateur ne supporte pas la lecture audio.
                 </audio>
             </div>
@@ -162,8 +162,18 @@
     </div>
 
     <script>
-        function showNextSection(sectionNumber) {
+        function showNextSection(sectionNumber, audioId) {
+            // Arrêter l'audio en cours
+            const currentAudio = document.getElementById(audioId);
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            // Masquer toutes les sections
             document.querySelectorAll('.quiz-section').forEach(section => section.classList.add('hidden'));
+            
+            // Afficher la section suivante
             document.getElementById(`section-${sectionNumber}`).classList.remove('hidden');
         }
 
@@ -197,4 +207,3 @@
     </script>
 </body>
 </html>
-
