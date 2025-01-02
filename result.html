@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résultats du Quiz</title>
+    <title>Résultat du Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            line-height: 1.6;
             text-align: center;
         }
         .score-circle {
             width: 150px;
             height: 150px;
-            background-color: #4CAF50;
+            background-color: #7937e4;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -23,34 +24,55 @@
             margin: 20px auto;
         }
         .feedback {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #d9534f;
             text-align: left;
             max-width: 800px;
             margin: 20px auto;
-            font-size: 1em;
-            color: #d9534f;
         }
         .feedback p {
             margin-bottom: 10px;
         }
+        .btn-back {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            display: inline-block;
+        }
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+        .btn-back i {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Résultats du Quiz</h1>
+    <h1>Résultat du Quiz</h1>
     <div class="score-circle" id="score"></div>
     <div id="feedback" class="feedback"></div>
+    <a href="exercices.html" class="btn-back">
+        <i>←</i> Retour au Quiz
+    </a>
 
     <script>
-        // استرجاع النتيجة والتصحيحات من localStorage
+        // Récupérer les données du score et du feedback depuis le localStorage
         const score = localStorage.getItem("quizScore");
         const feedback = JSON.parse(localStorage.getItem("quizFeedback"));
 
-        // عرض النتيجة
+        // Afficher le score
         document.getElementById("score").textContent = score;
 
-        // عرض التصحيحات
+        // Afficher les feedbacks
         const feedbackElement = document.getElementById("feedback");
-        feedbackElement.innerHTML = feedback.length
-            ? feedback.map(f => `<p>${f}</p>`).join('')
+        feedbackElement.innerHTML = feedback.length 
+            ? feedback.map(f => `<p>${f}</p>`).join('') 
             : '<p>Félicitations ! Vous avez tout juste !</p>';
     </script>
 </body>
